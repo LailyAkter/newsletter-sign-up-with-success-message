@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{
+      font-family: 'Outfit', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background-color: hsl(235, 18%, 26%);
+    }
+    *{
+      margin: 0px;
+      padding: 0px;
+      outline: 0px;
+      box-sizing: border-box;
+    }
+    ul{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+    }
+    .container{
+      width: 1440px;
+      margin: 0 auto;
+    }
+    .card{
+      height: 500px;
+      display: flex;
+      width:850px;
+      margin: 100px auto 0px;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 30px;
+    }
+    .card .card-left{
+      margin: 40px 55px 0px;
+      width:450px;
+    }
+    .card3 h2,
+    .card .card-left h2{
+      color:  hsl(234, 29%, 20%);
+      font-weight: 700;
+      margin-bottom:20px;
+      font-size: 50px;
+    }
+    .card .card-left p{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      color: hsl(234, 29%, 20%);
+      margin-bottom: 20px;
+    }
+    .card .card-left .card-list ul li{
+      margin-bottom: 10px;
+    }
+    .card .card-left .card-list ul li a{
+      color: hsl(235, 18%, 26%);
+    }
+    .card .card-left .card-list ul li a svg{
+      margin-right: 10px;
+    }
+    .card .card-left .card-email{
+      margin-top: 20px;
+    }
+    .card .card-left label{
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .card .card-left input{
+      width: 350px;
+      margin-bottom: 20px;
+      padding: 15px 10px;
+      border-color: hsl(231, 7%, 60%);
+      border-radius: 7px;
+    }
+    .card3 .card-button,
+    .card .card-left .card-button {
+      margin-top: 20px;
+    }
+    .card3 .card-button a,
+    .card .card-left .card-button a{
+      border: 1px solid hsl(234, 29%, 20%);
+      padding: 12px 58px;
+      color:  hsl(0, 0%, 100%);
+      background: hsl(234, 29%, 20%);
+    }
+    .card .card-right{
+      width: 350px;
+    }
+    .card .card-right img{
+      width:300px;
+      margin: 30px 0px 20px;
+    }
+    .attribution { 
+      font-size: 16px; 
+      text-align: center;
+      margin-top: 20px;
+      color:hsl(0, 0%, 100%);
+     }
+    .attribution a { color: hsl(4, 100%, 67%) }
+
+    .card2 .card-left .card-email span{
+      float: right;
+      font-size: 14px;
+      margin-right: 68px;
+      color: hsl(4, 100%, 67%);
+    }
+    .card2 .card-left input{
+      border-color:hsl(4, 100%, 67%);
+      background-color:hsl(356.71deg 100% 67.84% / 18%);
+    }
+    .card2 .card-left input::placeholder {
+      color: hsl(4, 100%, 67%);
+    }
+    .card3{
+      height: 450px;
+      width: 500px;
+      background-color:hsl(0, 0%, 100%) ;
+      margin: 70px auto 0px;
+    }
+    .card3 .card-details{
+      margin: 0px 50px;
+    }
+    .card3 .card-details svg{
+      margin-top: 25px;
+    }
+    .card3 .card-details h2{
+      margin-top: 20px;
+    }
+    .card3 .card-details p{
+      margin-bottom: 40px;
+    }
+
+    @media only screen and (max-width: 375px) {
+      .card1{
+        width: 1440px;
+        margin: 0px;
+        height: 2620px;
+        flex-direction: column-reverse;
+      }
+      .card1 .card-right img {
+        width:1500px;
+        margin:0px;
+      }
+      .card1 .card-left{
+        width: 1400px;
+      }
+      .card1 .card-left p {
+        font-size: 60px;
+        line-height: 80px;
+        margin-top: 70px;
+      }
+      .card1 .card-left h2 {
+        font-size: 160px;
+        margin-top: 70px;
+      }
+      .card1 .card-list{
+        margin-top: 70px;
+        font-size: 65px;
+      }
+      .card1 .card-left .card-button {
+          margin-top: 70px;
+          margin-bottom: 90px;
+      }
+      .card1 .card-left label {
+          font-size: 40px;
+          margin-bottom: 20px;
+          font-weight: 700;
+      }
+      .card1 .card-left .card-email {
+          margin-top: 65px;
+      }
+      .card1 .card-left input {
+        width: 1200px;
+        padding: 21px 14px;
+        border-color: hsl(231, 7%, 60%);
+        border-radius: 7px;
+        font-size: 55px;
+      }
+      .card1 .card-left .card-button a {
+          font-size: 75px;
+      }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="card card1">
+        <div class="card-left">
+          <h2>Stay Updated!</h2>
+          <p>Join 60,000+ product managers receiving monthly updates on</p>
+          <div class="card-list">
+            <ul>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>
+                  Product discovery and building what matters
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>
+                  Measuring to ensure updates are a success.
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>
+                  And much more!
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-email">
+            <label for="email">Email Address</label>
+            <br>
+            <br>
+            <input type="text" placeholder="gmail@company.com">
+          </div>
+          <div class="card-button">
+            <a href="#">Subscribe to monthly Newsletter </a>
+          </div>
+        </div>
+        <div class="card-right">
+          <img src="./assets/images/illustration-sign-up-desktop.svg" alt="sign up">
+        </div>
+      </div>
+      <div class="card card2">
+        <div class="card-left">
+          <h2>Stay Updated!</h2>
+          <p>Join 60,000+ product managers receiving monthly updates on</p>
+          <div class="card-list">
+            <ul>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>
+                  Product discovery and building what matters
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>
+                  Measuring to ensure updates are a success.
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>
+                  And much more!
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-email">
+            <label for="email">Email Address</label>
+            <span>Valid email address required</span>
+            <br>
+            <br>
+            <input type="text" placeholder="gmail@company.com">
+          </div>
+          <div class="card-button">
+            <a href="#">Subscribe to monthly Newsletter </a>
+          </div>
+        </div>
+        <div class="card-right">
+          <img src="./assets/images/illustration-sign-up-desktop.svg" alt="sign up">
+        </div>
+      </div>
+      <div class="card3">
+          <div class="card-details">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FF6A3A"/><stop offset="100%" stop-color="#FF527B"/></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)"/><path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285"/></g></svg>
+            <h2>Thanks for subscribing!</h2>
+            <p>A confirmation email has been sent to <span>ash@loremcompany.com</span>please open it and click the button inside to confirm your subscription. </p>
+            <div class="card-button">
+              <a href="#">Dissmiss Message</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
+</body>
+</html>
